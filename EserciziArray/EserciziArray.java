@@ -1,113 +1,107 @@
 import java.io.*;
 
-public class EserciziArray
-{
+public class EsArray {
 
     public static void main(String args[]) throws NumberFormatException, IOException {
-
         
-        //somma1();
-        //somma2();
-        //contaMinoriDiZero();
-        //maggiore();
+        sommaArray();
+        sommaArrayPersonalizzata();
+        contaMinoriDiZero();
+        trovaMassimo();
     }
 
-    public static void somma1() throws NumberFormatException, IOException {
+    public static void sommaArray() throws NumberFormatException, IOException {
         int i = 0;
-        int v[] = new int[10];
+        int[] array = new int[10];
         
-        InputStreamReader In = new InputStreamReader(System.in);
-        BufferedReader Tastiera = new BufferedReader(In);
+        InputStreamReader inputReader = new InputStreamReader(System.in);
+        BufferedReader tastiera = new BufferedReader(inputReader);
 
         for (i = 0; i < 10; i++) {
-            System.out.print("Valore: v[" + i + "]= ");
-            v[i] = Integer.parseInt(Tastiera.readLine());
+            System.out.print("Valore: array[" + i + "]= ");
+            array[i] = Integer.parseInt(tastiera.readLine());
         }
         for (i = 0; i < 10; i++) {
-            System.out.println("v[" + i + "]=" + v[i]);
+            System.out.println("array[" + i + "]=" + array[i]);
         }
-        int S = 0;
+        int somma = 0;
         for (i = 0; i < 10; i++) {
-            S = S + v[i];
+            somma = somma + array[i];
         }
-        System.out.println("somma=" + S);
+        System.out.println("Somma=" + somma);
     }
     
-    public static void somma2() throws NumberFormatException, IOException {
+    public static void sommaArrayPersonalizzata() throws NumberFormatException, IOException {
         int x;
-        InputStreamReader In = new InputStreamReader(System.in);
-        BufferedReader Tastiera = new BufferedReader(In);
+        InputStreamReader inputReader = new InputStreamReader(System.in);
+        BufferedReader tastiera = new BufferedReader(inputReader);
         do {
             System.out.print("Immettere un numero: ");
-            x = Integer.parseInt(Tastiera.readLine());
+            x = Integer.parseInt(tastiera.readLine());
         } while (x <= 0);
-        System.out.println("numero inserito: " + x);
+        System.out.println("Numero inserito: " + x);
         int i = 0;
-        int v[] = new int[x];
+        int[] array = new int[x];
         for (i = 0; i < x; i++) {
             System.out.print("Valore: ");
-            v[i] = Integer.parseInt(Tastiera.readLine());
+            array[i] = Integer.parseInt(tastiera.readLine());
         }
 
         for (i = 0; i < x; i++) {
-            System.out.println("v[" + i + "]=" + v[i]);
+            System.out.println("array[" + i + "]=" + array[i]);
         }
-        int S = 0;
+        int somma = 0;
         for (i = 0; i < x; i++) {
-            S = S + v[i];
+            somma = somma + array[i];
         }
-        System.out.println("somma=" + S);
+        System.out.println("Somma=" + somma);
     }
 
     public static void contaMinoriDiZero() throws NumberFormatException, IOException {
         int x;
-        InputStreamReader In = new InputStreamReader(System.in);
-        BufferedReader Tastiera = new BufferedReader(In);
+        InputStreamReader inputReader = new InputStreamReader(System.in);
+        BufferedReader tastiera = new BufferedReader(inputReader);
         do {
             System.out.print("Immettere un numero: ");
-            x = Integer.parseInt(Tastiera.readLine());
+            x = Integer.parseInt(tastiera.readLine());
         } while (x <= 0);
 
-        double[] A = new double[x];
-        int c = 0;
+        double[] array = new double[x];
+        int contatore = 0;
 
         for (int i = 0; i < x; i++) {
 
             System.out.print("Valore: ");
-            A[i] = Double.parseDouble(Tastiera.readLine());
+            array[i] = Double.parseDouble(tastiera.readLine());
 
-            if(A[i] < 0) c++;
+            if(array[i] < 0) contatore++;
         }
 
 
-        System.out.println("Numeri minori di 0 = " + c);
+        System.out.println("Numeri minori di 0 = " + contatore);
     }
 
-    public static void maggiore() throws NumberFormatException, IOException {
+    public static void trovaMassimo() throws NumberFormatException, IOException {
         int x;
-        InputStreamReader In = new InputStreamReader(System.in);
-        BufferedReader Tastiera = new BufferedReader(In);
+        InputStreamReader inputReader = new InputStreamReader(System.in);
+        BufferedReader tastiera = new BufferedReader(inputReader);
         do {
             System.out.print("Immettere un numero: ");
-            x = Integer.parseInt(Tastiera.readLine());
+            x = Integer.parseInt(tastiera.readLine());
         } while (x <= 0);
 
-        double[] A = new double[x];
-
-        
-
+        double[] array = new double[x];
         
         for (int i = 0; i < x; i++) {
             System.out.print("Valore: ");
-            A[i] = Double.parseDouble(Tastiera.readLine());
+            array[i] = Double.parseDouble(tastiera.readLine());
         }
 
-        double max = A[0];
+        double massimo = array[0];
 
-        for(int i = 1; i<x; i++)
-            if(A[i] > max) max = A[i];
+        for(int i = 1; i < x; i++)
+            if(array[i] > massimo) massimo = array[i];
 
-        System.out.println("Numero maggiore = " + max);
+        System.out.println("Numero massimo = " + massimo);
     }
-
 }
