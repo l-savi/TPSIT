@@ -3,9 +3,9 @@ import java.util.Scanner;
 
 public class stringa {
     public static void main (String[] args){
-        a();
+        //a();
         //b();
-        //c();
+        c();
         //d();
     }
 
@@ -46,7 +46,7 @@ public class stringa {
         System.out.println(stringa);
 
 
-
+}
 
     public static void b(){
 
@@ -184,6 +184,7 @@ public class stringa {
             System.out.println("iban non valido");
 
 
+}
 
 
 
