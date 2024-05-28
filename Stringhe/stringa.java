@@ -5,8 +5,8 @@ public class stringa {
     public static void main (String[] args){
         //a();
         //b();
-        c();
-        //d();
+        //c();
+        d();
     }
 
     public static void a(){
